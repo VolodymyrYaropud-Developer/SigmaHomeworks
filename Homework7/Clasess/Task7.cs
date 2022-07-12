@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -43,12 +43,8 @@ namespace Homework7.Clasess
                     while ((line = streamReader.ReadLine()) != null)
                     {
                         line = FirstLetterToUpper(line);
-                        var valuesForCheck = line.Split();
 
-                        if (valuesForCheck.Length == 3
-                            && IsCorrectName(line, valuesForCheck)
-                            && IsCorrectCaregory(line, valuesForCheck)
-                            && IsCorrectWeight(line, valuesForCheck))
+                        if (line.Split().Length == 3 && CheckAllValues(line.Split()))
 
                             WriteToFileIOutput(line);
 
@@ -71,7 +67,7 @@ namespace Homework7.Clasess
         private void WriteToFileIOutput(string str)
         {
 
-            using (StreamWriter sw = new StreamWriter(@"C:\Programs\SigmaHomeworks-master\Homework7\output.txt",true))
+            using (StreamWriter sw = new StreamWriter(@"C:\Programs\SigmaHomeworks-master\Homework7\output.txt", true))
             {
                 sw.WriteLine(str);
             }
@@ -79,24 +75,29 @@ namespace Homework7.Clasess
         private void WriteToFileErrorList(string str)
         {
 
-            using (StreamWriter sw = new StreamWriter(@"C:\Programs\SigmaHomeworks-master\Homework7\errorlist.txt",true))
+            using (StreamWriter sw = new StreamWriter(@"C:\Programs\SigmaHomeworks-master\Homework7\errorlist.txt", true))
             {
                 sw.WriteLine(($"{str,-35}| => time {DateTime.Now,-20}"));
             }
 
         }
 
-        private bool IsCorrectName(string str, string[] values)
+        private bool CheckAllValues(string[] values)
+        {
+            return IsCorrectName(values) && IsCorrectCaregory(values) && IsCorrectWeight(values);
+        }
+
+        private bool IsCorrectName(string[] values)
         {
             return Enum.IsDefined(typeof(Kind), values[0]);
         }
 
-        private bool IsCorrectCaregory(string str, string[] values)
+        private bool IsCorrectCaregory(string[] values)
         {
             return Enum.IsDefined(typeof(Category), values[1]);
         }
 
-        private bool IsCorrectWeight(string str, string[] values)
+        private bool IsCorrectWeight(string[] values)
         {
             double a;
             return double.TryParse(values[2], out a);
@@ -105,6 +106,77 @@ namespace Homework7.Clasess
         private string FirstLetterToUpper(string values)
         {
             return (values != "" ? values[0].ToString().ToUpper() + values[1..] : "empty string");
+        }
+
+        public void ChangeErrorList()
+        {
+            Console.WriteLine("If you want to change information in error list please tab +");
+            if (Console.ReadLine() == "+")
+            {
+                PrintErrorList();
+            }
+            else
+            {
+                Console.WriteLine("Not \" + \" ");
+            }
+        }
+
+        private void PrintErrorList()
+        {
+            using (StreamReader sr = new StreamReader(@"C:\Programs\SigmaHomeworks-master\Homework7\errorlist.txt"))
+            {
+                int count = 1;
+                string information;
+                while ((information = sr.ReadLine()) != null)
+                    Console.WriteLine($"{count++}  | {information}");
+                ChoiseUser(count);
+            }
+
+        }
+        private void ChoiseUser(int count)
+        {
+            int NumOfString;
+            Console.WriteLine("what string you want to change");
+            try
+            {
+                InTry(count);
+
+            }
+            catch (Exception)
+            {
+                IfCatch(count);
+            }
+        }
+
+        private void InTry(int count)
+        {
+            int NumOfString;
+            int.TryParse(Console.ReadLine(), out NumOfString);
+            if (NumOfString < count && NumOfString > 0)
+            {
+                Console.WriteLine("Please write a new string");
+                string line = Console.ReadLine();
+                if (line.Split().Length == 3 && CheckAllValues(line.Split()))
+                {
+                    WriteToFileIOutput(line);
+                }
+                else
+                    Console.WriteLine("not a correect string");
+            }
+        }
+
+        private void IfCatch(int count)
+        {
+            Console.WriteLine("if you want to exit please tab +");
+            if (Console.ReadLine() == "+")
+            {
+                Environment.Exit(0);
+            }
+            else
+            {
+                Console.WriteLine("okey. Try Again");
+                ChoiseUser(count);
+            }
         }
     }
 }
