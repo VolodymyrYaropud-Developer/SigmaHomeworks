@@ -33,28 +33,27 @@ namespace Homework7.Clasess
 
         private void ReadFromFile(string path)
         {
-            using (var fileStream = File.OpenRead(path))
+
+            using (var streamReader = new StreamReader(path))
             {
-                using (var streamReader = new StreamReader(path))
+                CreateAndDeleteFiles(@"C:\Programs\SigmaHomeworks-master\Homework7\output.txt");
+                CreateAndDeleteFiles(@"C:\Programs\SigmaHomeworks-master\Homework7\errorlist.txt");
+                string line;
+                while ((line = streamReader.ReadLine()) != null)
                 {
-                    CreateAndDeleteFiles(@"C:\Programs\SigmaHomeworks-master\Homework7\output.txt");
-                    CreateAndDeleteFiles(@"C:\Programs\SigmaHomeworks-master\Homework7\errorlist.txt");
-                    string line;
-                    while ((line = streamReader.ReadLine()) != null)
-                    {
-                        line = FirstLetterToUpper(line);
+                    line = FirstLetterToUpper(line);
 
-                        if (line.Split().Length == 3 && CheckAllValues(line.Split()))
+                    if (line.Split().Length == 3 && CheckAllValues(line.Split()))
 
-                            WriteToFileIOutput(line);
+                        WriteToFile(line, @"C:\Programs\SigmaHomeworks-master\Homework7\output.txt");
 
-                        else
-                            WriteToFileErrorList(line);
-
-                    }
+                    else
+                        WriteToFile(line, @"C:\Programs\SigmaHomeworks-master\Homework7\errorlist.txt");
 
                 }
+
             }
+
         }
 
 
@@ -63,23 +62,12 @@ namespace Homework7.Clasess
             File.Delete(path);
             File.Create(path).Close();
         }
-
-        private void WriteToFileIOutput(string str)
+        private void WriteToFile(string str, string path)
         {
-
-            using (StreamWriter sw = new StreamWriter(@"C:\Programs\SigmaHomeworks-master\Homework7\output.txt", true))
-            {
-                sw.WriteLine(str);
-            }
-        }
-        private void WriteToFileErrorList(string str)
-        {
-
-            using (StreamWriter sw = new StreamWriter(@"C:\Programs\SigmaHomeworks-master\Homework7\errorlist.txt", true))
+            using (StreamWriter sw = new StreamWriter(path, true))
             {
                 sw.WriteLine(($"{str,-35}| => time {DateTime.Now,-20}"));
             }
-
         }
 
         private bool CheckAllValues(string[] values)
@@ -130,12 +118,12 @@ namespace Homework7.Clasess
                 while ((information = sr.ReadLine()) != null)
                     Console.WriteLine($"{count++}  | {information}");
                 ChoiseUser(count);
+                sr.Close();
             }
 
         }
         private void ChoiseUser(int count)
         {
-            int NumOfString;
             Console.WriteLine("what string you want to change");
             try
             {
@@ -150,18 +138,19 @@ namespace Homework7.Clasess
 
         private void InTry(int count)
         {
-            int NumOfString;
-            int.TryParse(Console.ReadLine(), out NumOfString);
+            int.TryParse(Console.ReadLine(), out int NumOfString);
             if (NumOfString < count && NumOfString > 0)
             {
                 Console.WriteLine("Please write a new string");
-                string line = Console.ReadLine();
-                if (line.Split().Length == 3 && CheckAllValues(line.Split()))
+                string? line = Console.ReadLine();
+                if (line?.Split().Length == 3 && CheckAllValues(line.Split()))
                 {
-                    WriteToFileIOutput(line);
+                    WriteToFile(line, @"C:\Programs\SigmaHomeworks-master\Homework7\output.txt");
+                    EditErrorlist(NumOfString);
                 }
                 else
                     Console.WriteLine("not a correect string");
+                Console.ReadKey();
             }
         }
 
@@ -176,6 +165,29 @@ namespace Homework7.Clasess
             {
                 Console.WriteLine("okey. Try Again");
                 ChoiseUser(count);
+            }
+        }
+        private void EditErrorlist(int numberOfString)
+        {
+            AddToTempFile(numberOfString);
+        }
+
+        private void AddToTempFile(int numberOfString)
+        {
+            using (var reader = new StreamReader(@"C:\Programs\SigmaHomeworks-master\Homework7\errorlist.txt"))
+            {
+                int count = 0;
+                string? line;
+                CreateAndDeleteFiles(@"C:\Programs\SigmaHomeworks-master\Homework7\tempFile.txt");
+                while ((line = reader.ReadLine()) != null)
+                {
+                    count++;
+                    if (count != numberOfString)
+                    {
+                        WriteToFile(line, @"C:\Programs\SigmaHomeworks-master\Homework7\tempFile.txt");
+                    }
+                }
+                reader.Close();
             }
         }
     }
