@@ -1,0 +1,15 @@
+C:\Programs\SigmaHomeworks-master\Homework8\obj\Debug\net6.0\Homework8.csproj.AssemblyReference.cache
+C:\Programs\SigmaHomeworks-master\Homework8\obj\Debug\net6.0\Homework8.GeneratedMSBuildEditorConfig.editorconfig
+C:\Programs\SigmaHomeworks-master\Homework8\obj\Debug\net6.0\Homework8.AssemblyInfoInputs.cache
+C:\Programs\SigmaHomeworks-master\Homework8\obj\Debug\net6.0\Homework8.AssemblyInfo.cs
+C:\Programs\SigmaHomeworks-master\Homework8\obj\Debug\net6.0\Homework8.csproj.CoreCompileInputs.cache
+C:\Programs\SigmaHomeworks-master\Homework8\bin\Debug\net6.0\Homework8.exe
+C:\Programs\SigmaHomeworks-master\Homework8\bin\Debug\net6.0\Homework8.deps.json
+C:\Programs\SigmaHomeworks-master\Homework8\bin\Debug\net6.0\Homework8.runtimeconfig.json
+C:\Programs\SigmaHomeworks-master\Homework8\bin\Debug\net6.0\Homework8.dll
+C:\Programs\SigmaHomeworks-master\Homework8\bin\Debug\net6.0\Homework8.pdb
+C:\Programs\SigmaHomeworks-master\Homework8\obj\Debug\net6.0\Homework8.dll
+C:\Programs\SigmaHomeworks-master\Homework8\obj\Debug\net6.0\refint\Homework8.dll
+C:\Programs\SigmaHomeworks-master\Homework8\obj\Debug\net6.0\Homework8.pdb
+C:\Programs\SigmaHomeworks-master\Homework8\obj\Debug\net6.0\Homework8.genruntimeconfig.cache
+C:\Programs\SigmaHomeworks-master\Homework8\obj\Debug\net6.0\ref\Homework8.dll
