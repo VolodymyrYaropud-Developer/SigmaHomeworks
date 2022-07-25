@@ -1,0 +1,41 @@
+﻿name
+Назва продукту - 1
+ing2 - 2
+ing3 - 3
+ing4 - 4
+ing5 - 5
+
+name
+Назва продукту - 1
+ing2 - 2
+ing3 - 3
+ing4 - 4
+ing5 - 5
+
+name
+Назва продукту - 1
+ing2 - 2
+ing3 - 3
+ing4 - 4
+ing5 - 5
+
+name
+Назва продукту - 1
+ing2 - 2
+ing3 - 3
+ing4 - 4
+ing5 - 5
+
+name
+Назва продукту - 1
+ing2 - 2
+ing3 - 3
+ing4 - 4
+ing5 - 5
+
+name
+Назва продукту - 1
+ing2 - 2
+ing3 - 3
+ing4 - 4
+ing5 - 5

@@ -1,0 +1,15 @@
+C:\Programs\SigmaHomeworks-master\Homework9\bin\Debug\net6.0\Homework9.exe
+C:\Programs\SigmaHomeworks-master\Homework9\bin\Debug\net6.0\Homework9.deps.json
+C:\Programs\SigmaHomeworks-master\Homework9\bin\Debug\net6.0\Homework9.runtimeconfig.json
+C:\Programs\SigmaHomeworks-master\Homework9\bin\Debug\net6.0\Homework9.dll
+C:\Programs\SigmaHomeworks-master\Homework9\bin\Debug\net6.0\Homework9.pdb
+C:\Programs\SigmaHomeworks-master\Homework9\obj\Debug\net6.0\Homework9.csproj.AssemblyReference.cache
+C:\Programs\SigmaHomeworks-master\Homework9\obj\Debug\net6.0\Homework9.GeneratedMSBuildEditorConfig.editorconfig
+C:\Programs\SigmaHomeworks-master\Homework9\obj\Debug\net6.0\Homework9.AssemblyInfoInputs.cache
+C:\Programs\SigmaHomeworks-master\Homework9\obj\Debug\net6.0\Homework9.AssemblyInfo.cs
+C:\Programs\SigmaHomeworks-master\Homework9\obj\Debug\net6.0\Homework9.csproj.CoreCompileInputs.cache
+C:\Programs\SigmaHomeworks-master\Homework9\obj\Debug\net6.0\Homework9.dll
+C:\Programs\SigmaHomeworks-master\Homework9\obj\Debug\net6.0\refint\Homework9.dll
+C:\Programs\SigmaHomeworks-master\Homework9\obj\Debug\net6.0\Homework9.pdb
+C:\Programs\SigmaHomeworks-master\Homework9\obj\Debug\net6.0\Homework9.genruntimeconfig.cache
+C:\Programs\SigmaHomeworks-master\Homework9\obj\Debug\net6.0\ref\Homework9.dll
